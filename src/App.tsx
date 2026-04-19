@@ -33,7 +33,7 @@ export default function App() {
 
       {/* Side Navigation - Bento Style */}
       <nav className="w-full md:w-20 flex md:flex-col items-center justify-between py-6 px-4 bento-card border-none bg-opacity-40 shrink-0 h-auto md:h-screen sticky top-8">
-        <div className="text-2xl font-bold tracking-tighter gradient-text font-display">AC</div>
+        <div className="text-2xl font-bold tracking-tighter gradient-text font-display">RKB</div>
         <div className="flex md:flex-col gap-6 md:gap-8 opacity-60">
           <a href="#hero" className="hover:text-primary transition-colors text-xl">🏠</a>
           <a href="#about" className="hover:text-primary transition-colors text-xl">👤</a>
