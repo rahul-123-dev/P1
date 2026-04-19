@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #0a0a0f;
+  --color-primary: #7c6ee0;
+  --color-secondary: #4a8fe8;
+  --color-text-primary: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-accent-indigo: #818cf8;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased selection:bg-primary/30 selection:text-white;
+    cursor: none;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-[10px] bg-[#13131f]/60 border border-primary/15 rounded-[1.5rem] overflow-hidden transition-all duration-300;
+  }
+
+  .bento-card {
+    @apply backdrop-blur-[10px] bg-[#13131f]/60 border border-primary/15 rounded-[1.5rem] overflow-hidden transition-all duration-300 shadow-lg hover:shadow-primary/5 hover:border-primary/30;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2
+           bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_20px_rgba(124,110,224,0.4)] hover:-translate-y-0.5 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2
+           border border-white/20 hover:bg-white/5 hover:border-primary/50 hover:-translate-y-0.5 active:scale-95;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(15deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out 3;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-10px) rotate(45deg); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
